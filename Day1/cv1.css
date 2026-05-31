@@ -1,0 +1,328 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f0f0f0;
+  color: #1a1a1a;
+  padding: 40px 20px;
+}
+
+.cv-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+}
+
+/* ── HEADER ── */
+.cv-header {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 44px 48px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+}
+
+.header-left h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.header-left .job-title {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #e2b96e;
+  text-transform: uppercase;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 240px;
+  text-align: right;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.contact-item i {
+  color: #e2b96e;
+  font-size: 13px;
+  width: 16px;
+  text-align: center;
+}
+
+/* ── BODY LAYOUT ── */
+.cv-body {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+}
+
+/* ── MAIN COLUMN ── */
+.main-col {
+  padding: 40px 40px 40px 48px;
+  border-right: 1px solid #e8e8e8;
+}
+
+/* ── SIDEBAR ── */
+.side-col {
+  padding: 40px 32px;
+  background: #fafafa;
+}
+
+/* ── SECTION TITLES ── */
+.section-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #e2b96e;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #1a1a2e;
+}
+
+/* ── ABOUT ── */
+.about-text {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+
+/* ── WORK HISTORY ── */
+.work-section {
+  margin-bottom: 36px;
+}
+
+.job-entry {
+  margin-bottom: 28px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.job-entry::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e2b96e;
+}
+
+.job-entry::after {
+  content: '';
+  position: absolute;
+  left: 3.5px;
+  top: 18px;
+  width: 1px;
+  height: calc(100% - 10px);
+  background: #ddd;
+}
+
+.job-entry:last-child::after {
+  display: none;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 2px;
+}
+
+.job-title-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.job-date {
+  font-size: 12px;
+  color: #888;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.job-company {
+  font-size: 13px;
+  color: #e2b96e;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.job-entry ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 8px;
+}
+
+.job-entry ul li {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.job-entry ul li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: #1a1a2e;
+  font-weight: 700;
+}
+
+.sub-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #888;
+  margin: 8px 0 4px;
+}
+
+/* ── EDUCATION ── */
+.edu-section {
+  margin-bottom: 0;
+}
+
+.edu-entry {
+  padding-left: 18px;
+  position: relative;
+}
+
+.edu-entry::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1a1a2e;
+}
+
+.edu-degree {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 2px;
+}
+
+.edu-school {
+  font-size: 13px;
+  color: #e2b96e;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.edu-note {
+  font-size: 12px;
+  color: #777;
+  line-height: 1.6;
+}
+
+/* ── SIDEBAR SECTIONS ── */
+.side-section {
+  margin-bottom: 32px;
+}
+
+/* ── SKILLS ── */
+.skill-item {
+  margin-bottom: 14px;
+}
+
+.skill-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-name span {
+  font-size: 11px;
+  font-weight: 400;
+  color: #aaa;
+}
+
+.skill-bar-bg {
+  height: 5px;
+  background: #e8e8e8;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1a1a2e, #4a4a8e);
+  border-radius: 3px;
+}
+
+/* ── TECH TAGS ── */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 600;
+  background: #1a1a2e;
+  color: #e2b96e;
+  padding: 4px 10px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+
+/* ── LANGUAGES ── */
+.lang-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #444;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.lang-item:last-child {
+  border-bottom: none;
+}
+
+.lang-level {
+  font-size: 11px;
+  color: #888;
+  font-style: italic;
+}
+
+@media print {
+  body { padding: 0; background: #fff; }
+  .cv-wrapper { box-shadow: none; }
+}
