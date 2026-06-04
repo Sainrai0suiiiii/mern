@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="./styles/contact.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>FULLSTACK DEVELOPER.</h1>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="About.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html" class="active">Contact</a>
+        </nav>
+      </header>
+
+      <main class="main">
+        <div class="page-heading">
+          <h2 class="section-title">GET IN TOUCH</h2>
+          <p class="section-sub">Have a project in mind? Let's talk.</p>
+        </div>
+
+        <div class="contact-container">
+
+          <!-- Left: Contact Info -->
+          <div class="contact-info">
+
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="info-text">
+                <p class="info-label">Phone</p>
+                <strong>9847420744</strong>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="info-text">
+                <p class="info-label">Email</p>
+                <strong>Sahinkulung@gmail.com</strong>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="info-text">
+                <p class="info-label">Location</p>
+                <strong>PathriSanischare -09, Morang, Nepal</strong>
+              </div>
+            </div>
+
+            <div class="social-section">
+              <p class="social-label">Find me on</p>
+              <div class="social-icons">
+                <a href="https://github.com/sahinkulung" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="#" title="LinkedIn">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="#" title="Facebook">
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right: Contact Form -->
+          <div class="contact-form-wrapper">
+            <form class="contact-form" id="contactForm">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="What is this about?"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder="Tell me about your project..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+
+              <p class="form-success" id="successMsg">
+                <i class="fa-solid fa-circle-check"></i>
+                Message sent successfully!
+              </p>
+
+            </form>
+          </div>
+
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="short-info">
+          <p class="footer-name">Sahin Kulung</p>
+          <p class="footer-bio">
+            I am a passionate Fullstack Developer focused on building
+            responsive, user-friendly, and scalable web applications using
+            JavaScript, React, Node, Express, and modern frontend technologies.
+          </p>
+        </div>
+        <div class="social-links">
+          <p>Social</p>
+          <ul>
+            <li><a href="https://github.com/sahinkulung"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <p>Contact</p>
+          <ul>
+            <li><strong>Phone: <span>9847420744</span></strong></li>
+            <li><strong>Email: <span>Sahinkulung@gmail.com</span></strong></li>
+            <li><strong>Location: <span>PathriSanischare -09, Morang, Nepal</span></strong></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">Copyright @2026, Sahin Kulung, All rights Reserved</p>
+    </footer>
+
+    <script>
+      const form = document.getElementById('contactForm');
+      const successMsg = document.getElementById('successMsg');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        successMsg.classList.add('show');
+        form.reset();
+        setTimeout(() => successMsg.classList.remove('show'), 4000);
+      });
+    </script>
+  </body>
+</html>
