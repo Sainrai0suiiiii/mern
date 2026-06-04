@@ -14,15 +14,15 @@
     <div class="wrapper">
       <header>
         <h1>FULLSTACK DEVELOPER.</h1>
-
         <nav>
           <a href="index.html" class="active">Home</a>
           <a href="About.html">About</a>
-          <a href="projects.html">projects</a>
+          <a href="projects.html">Projects</a>
           <a href="contact.html">Contact</a>
         </nav>
       </header>
 
+      <!-- Hero Section -->
       <section class="hero">
         <div class="intro">
           <p class="name">SAHIN KULUNG.</p>
@@ -31,11 +31,99 @@
             responsive, user-friendly, and scalable web applications using
             JavaScript, React, Node, Express, and modern frontend technologies.
           </p>
+          <div class="hero-btns">
+            <a href="projects.html" class="btn-primary">View My Work</a>
+            <a href="contact.html" class="btn-outline">Hire Me</a>
+          </div>
         </div>
         <figure class="picture">
-          <img src="./images/profile-linkedIn.png" alt="" />
+          <img src="./images/profile-linkedIn.png" alt="Sahin Kulung" />
         </figure>
       </section>
+
+      <!-- Achievements Section -->
+      <section class="achievements" id="achievements">
+        <div class="achievements-heading">
+          <h2 class="section-title">ACHIEVEMENTS</h2>
+          <p class="section-sub">Milestones & moments worth celebrating.</p>
+        </div>
+
+        <div class="achievements-grid">
+
+          <!-- Achievement Card 1 -->
+          <div class="achievement-card" data-index="0">
+            <div class="card-img-wrapper">
+              <img
+                src="./images/DSC00134.jpg"
+                alt="Achievement 1"
+                class="card-img"
+              />
+              <div class="card-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-badge">Certificate</span>
+              <h3 class="card-title">Web Development Bootcamp</h3>
+              <p class="card-desc">Completed an intensive fullstack web development bootcamp covering React, Node.js, and MongoDB.</p>
+              <span class="card-year"><i class="fa-regular fa-calendar"></i> 2024</span>
+            </div>
+          </div>
+
+          <!-- Achievement Card 2 -->
+          <div class="achievement-card" data-index="1">
+            <div class="card-img-wrapper">
+              <img
+                src="./images/DSC09930.jpg"
+                alt="Achievement 2"
+                class="card-img"
+              />
+              <div class="card-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-badge">Award</span>
+              <h3 class="card-title">Best Project — College Showcase</h3>
+              <p class="card-desc">Awarded best project at Phoenix College of Management annual tech showcase for an e-commerce platform.</p>
+              <span class="card-year"><i class="fa-regular fa-calendar"></i> 2025</span>
+            </div>
+          </div>
+
+          <!-- Achievement Card 3 -->
+          <div class="achievement-card" data-index="2">
+            <div class="card-img-wrapper">
+              <img
+                src="./images/DSC09339.jpg"
+                alt="Achievement 3"
+                class="card-img"
+              />
+              <div class="card-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-badge">Completion</span>
+              <h3 class="card-title">Diploma in Computer Engineering</h3>
+              <p class="card-desc">Successfully completed Diploma in Computer Engineering from CTEVT Nepal with distinction.</p>
+              <span class="card-year"><i class="fa-regular fa-calendar"></i> 2023</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="lightbox-content">
+        <img src="" alt="" id="lightboxImg" />
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+      </div>
     </div>
 
     <footer>
@@ -48,42 +136,71 @@
             JavaScript, React, Node, Express, and modern frontend technologies.
           </p>
         </div>
-
         <div class="social-links">
           <p>Social</p>
           <ul>
-            <li>
-              <a href="https://github.com/sahinkulung"
-                ><i class="fa-brands fa-github"></i
-              ></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            </li>
+            <li><a href="https://github.com/sahinkulung"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
           </ul>
         </div>
-
         <div class="footer-contact">
           <p>Contact</p>
           <ul>
-            <li>
-              <strong>Phone: <span>9847420744</span></strong>
-            </li>
-            <li>
-              <strong>Email: <span>Sahinkulung@gmail.com</span></strong>
-            </li>
-            <li>
-              <strong>Location: <span>PathriSanischare -09, Morang, Nepal</span></strong>
-            </li>
+            <li><strong>Phone: <span>9847420744</span></strong></li>
+            <li><strong>Email: <span>Sahinkulung@gmail.com</span></strong></li>
+            <li><strong>Location: <span>PathriSanischare -09, Morang, Nepal</span></strong></li>
           </ul>
         </div>
       </div>
-      <p class="copyright">
-        Copyright @2026, Sahin, Allrights Reserved
-      </p>
+      <p class="copyright">Copyright @2026, Sahin Kulung, All rights Reserved</p>
     </footer>
+
+    <script>
+      // ── Scroll reveal animation ──
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.achievement-card').forEach(card => {
+        observer.observe(card);
+      });
+
+      // ── Lightbox ──
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+      const lightboxClose = document.getElementById('lightboxClose');
+
+      document.querySelectorAll('.achievement-card').forEach(card => {
+        card.querySelector('.card-img-wrapper').addEventListener('click', () => {
+          const img = card.querySelector('.card-img');
+          const title = card.querySelector('.card-title').textContent;
+          lightboxImg.src = img.src;
+          lightboxImg.alt = title;
+          lightboxCaption.textContent = title;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    </script>
   </body>
 </html>
