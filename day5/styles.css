@@ -1,0 +1,516 @@
+/* ===========================
+   styles.css — Facebook Clone
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg:          #f0f2f5;
+  --white:       #ffffff;
+  --blue:        #1877f2;
+  --blue-hover:  #166fe5;
+  --blue-light:  #e7f3ff;
+  --text:        #050505;
+  --text-muted:  #65676b;
+  --border:      #ced0d4;
+  --hover:       #f2f2f2;
+  --nav-h:       56px;
+  --shadow:      0 2px 4px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.1);
+  --radius:      8px;
+  --font:        'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.34;
+}
+
+a { text-decoration: none; color: inherit; }
+svg { display: block; }
+
+/* ═══════════════════════════
+   NAVIGATION BAR
+═══════════════════════════ */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--white);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: var(--nav-h);
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  align-items: center;
+  height: 100%;
+  padding: 0 16px;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+/* ── Nav Left ── */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-left svg {
+  width: 40px;
+  height: 40px;
+  fill: var(--blue);
+  flex-shrink: 0;
+}
+
+.nav-left input[type="search"] {
+  background: var(--bg);
+  border: none;
+  border-radius: 50px;
+  padding: 8px 16px 8px 36px;
+  font-family: var(--font);
+  font-size: 0.93rem;
+  color: var(--text);
+  width: 240px;
+  outline: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2365676b' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zm-5.242 1.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  transition: box-shadow 0.2s;
+}
+
+.nav-left input[type="search"]:focus {
+  box-shadow: 0 0 0 2px var(--blue);
+}
+
+.nav-left input::placeholder {
+  color: var(--text-muted);
+}
+
+/* ── Nav Middle ── */
+.nav-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.nav-middle a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 48px;
+  border-radius: var(--radius);
+  border-bottom: 3px solid transparent;
+  transition: background 0.15s;
+  position: relative;
+}
+
+.nav-middle a svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--text-muted);
+  transition: fill 0.15s;
+}
+
+.nav-middle a:hover {
+  background: var(--hover);
+}
+
+.nav-middle a:hover svg {
+  fill: var(--text);
+}
+
+.nav-middle a.active {
+  border-bottom-color: var(--blue);
+}
+
+.nav-middle a.active svg {
+  fill: var(--blue);
+}
+
+/* ── Nav Right ── */
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.right a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1.05rem;
+  transition: background 0.15s;
+}
+
+.right a:hover {
+  background: var(--border);
+}
+
+.profile-nav a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 50px;
+  width: auto !important;
+  background: var(--bg);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.profile-nav a i {
+  font-size: 1rem;
+}
+
+.profile-nav span {
+  white-space: nowrap;
+}
+
+.nav-menue {
+  font-size: 1.1rem;
+}
+
+/* ═══════════════════════════
+   LAYOUT CONTAINER
+═══════════════════════════ */
+.container {
+  padding-top: var(--nav-h);
+  display: grid;
+  grid-template-columns: 280px 1fr 280px;
+  min-height: 100vh;
+}
+
+/* ═══════════════════════════
+   LEFT NAVIGATION
+═══════════════════════════ */
+.left-navigation {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  width: 280px;
+  height: calc(100vh - var(--nav-h));
+  padding: 8px 8px;
+  overflow-y: auto;
+}
+
+.left-navigation::-webkit-scrollbar { width: 0; }
+
+.left-navigation-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Combine icons + text into rows */
+.left-navigation-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-navigation-icons,
+.left-navigation-text {
+  display: contents;
+}
+
+/* Rebuild as a list of rows */
+.left-navigation-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.left-navigation-icons {
+  display: none; /* hide individual icon divs */
+}
+
+.left-navigation-text {
+  display: none;
+}
+
+/* Use the parent to build rows via JS-free approach:
+   We'll style the wrapper to fake combined rows */
+.left-navigation-wrapper::before {
+  content: '';
+}
+
+/* Since HTML has icons & text in separate divs,
+   we float them side by side using grid override */
+.left-navigation-wrapper {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  align-items: center;
+  gap: 0;
+}
+
+.left-navigation-icons {
+  display: contents;
+}
+
+.left-navigation-text {
+  display: contents;
+}
+
+.left-navigation-icons i,
+.left-navigation-text p {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: var(--radius);
+  transition: background 0.15s;
+  cursor: pointer;
+  height: 52px;
+}
+
+.left-navigation-icons i {
+  justify-content: center;
+  font-size: 1.35rem;
+  color: var(--blue);
+}
+
+.left-navigation-text p {
+  font-size: 0.93rem;
+  font-weight: 500;
+  color: var(--text);
+  padding-left: 12px;
+}
+
+/* Row hover — pair icon + text */
+.left-navigation-icons i:hover,
+.left-navigation-text p:hover {
+  background: var(--hover);
+}
+
+/* ═══════════════════════════
+   MAIN CONTENT
+═══════════════════════════ */
+main {
+  grid-column: 2;
+  padding: 24px 16px;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ═══════════════════════════
+   STORY SECTION
+═══════════════════════════ */
+.story-wrapper {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.story-wrapper::-webkit-scrollbar { display: none; }
+
+.story {
+  flex-shrink: 0;
+}
+
+.story-image {
+  position: relative;
+  width: 112px;
+  height: 196px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+
+.story-image:hover {
+  transform: scale(1.03);
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.3s;
+}
+
+.story-image:hover img {
+  filter: brightness(0.85);
+}
+
+.story-image figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 8px 8px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.6));
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.story-image figcaption span {
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  line-height: 1.2;
+}
+
+/* Profile ring on story */
+.story-image::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid var(--blue);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── Add Story card ── */
+.story-add {
+  flex-shrink: 0;
+  width: 112px;
+  height: 196px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.story-add:hover { transform: scale(1.03); }
+
+.story-add-img {
+  flex: 1;
+  background: var(--bg);
+  position: relative;
+}
+
+.story-add-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-add-icon {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  background: var(--blue);
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.story-add-label {
+  padding: 24px 8px 12px;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ═══════════════════════════
+   RESPONSIVE
+═══════════════════════════ */
+@media (max-width: 1100px) {
+  .container {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .left-navigation {
+    width: 72px;
+  }
+
+  .left-navigation-text p {
+    display: none;
+  }
+
+  .left-navigation-wrapper {
+    grid-template-columns: 52px;
+  }
+
+  .left-navigation-icons i {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .left-navigation {
+    display: none;
+  }
+
+  .nav-left input[type="search"] {
+    width: 160px;
+  }
+
+  .nav-middle a {
+    width: 60px;
+  }
+
+  main {
+    padding: 16px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-middle {
+    gap: 0;
+  }
+
+  .nav-middle a {
+    width: 48px;
+  }
+
+  .right a {
+    width: 36px;
+    height: 36px;
+  }
+
+  .profile-nav span {
+    display: none;
+  }
+}
