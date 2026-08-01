@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In - Safira</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Poppins', 'Arial', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="font-sans bg-[#f0f0f1] min-h-screen flex items-center justify-center py-16 px-4">
+
+  <div class="w-full max-w-[400px]">
+
+    <!-- Login card -->
+    <div class="bg-white rounded-sm shadow-sm p-9">
+      <form onsubmit="return false;">
+
+        <!-- Username -->
+        <div class="mb-5">
+          <label for="username" class="block text-[15px] text-gray-700 mb-2">
+            Username or Email Address
+          </label>
+          <input
+            id="username"
+            type="text"
+            class="w-full border-2 border-[#2271b1] rounded px-3.5 py-2.5 text-[15px] outline-none focus:border-[#2271b1] focus:ring-2 focus:ring-[#2271b1]/20"
+          >
+        </div>
+
+        <!-- Password -->
+        <div class="mb-5">
+          <label for="password" class="block text-[15px] text-gray-700 mb-2">
+            Password
+          </label>
+          <div class="relative">
+            <input
+              id="password"
+              type="password"
+              class="w-full border border-gray-300 rounded px-3.5 py-2.5 pr-11 text-[15px] outline-none focus:border-[#2271b1] focus:ring-2 focus:ring-[#2271b1]/20"
+            >
+            <button
+              type="button"
+              aria-label="Show password"
+              onclick="togglePassword()"
+              class="absolute right-0 top-0 h-full w-11 flex items-center justify-center text-[#2271b1] hover:text-[#135e96]"
+            >
+              <svg id="eye-icon" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Remember me / Log in -->
+        <div class="flex items-center justify-between">
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 border-gray-400 rounded accent-[#2271b1]">
+            <span class="text-[15px] text-gray-700">Remember Me</span>
+          </label>
+
+          <button
+            type="submit"
+            class="bg-[#2271b1] hover:bg-[#135e96] transition-colors text-white text-[14px] font-medium px-5 py-2 rounded"
+          >
+            Log In
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- Links below card -->
+    <div class="mt-6 text-[14px] text-gray-600 flex items-center gap-2">
+      <a href="#" class="hover:text-[#2271b1]">Register</a>
+      <span class="text-gray-400">|</span>
+      <a href="#" class="hover:text-[#2271b1]">Lost your password?</a>
+    </div>
+
+    <div class="mt-5 text-[14px]">
+      <a href="#" class="text-gray-600 hover:text-[#2271b1]">&larr; Back to Safira</a>
+    </div>
+
+    <div class="mt-16 text-center">
+      <a href="#" class="text-[14px] text-[#2271b1] underline hover:text-[#135e96]">Privacy Policy</a>
+    </div>
+
+  </div>
+
+  <script>
+    function togglePassword() {
+      const input = document.getElementById('password');
+      const icon = document.getElementById('eye-icon');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.innerHTML = '<path d="M17.94 17.94A10.94 10.94 0 0112 20c-7 0-11-8-11-8a21.8 21.8 0 015.06-6.06M9.9 4.24A10.94 10.94 0 0112 4c7 0 11 8 11 8a21.8 21.8 0 01-2.16 3.19M14.12 14.12a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>';
+      } else {
+        input.type = 'password';
+        icon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+      }
+    }
+  </script>
+
+</body>
+</html>
