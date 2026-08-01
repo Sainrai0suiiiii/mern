@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safira - Footer</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            DEFAULT: '#6ba43a',
+            dark: '#5c9330',
+          }
+        },
+        fontFamily: {
+          sans: ['Poppins', 'Arial', 'sans-serif'],
+          display: ['"Playfair Display"', 'serif'],
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="font-sans bg-[#1a1a1a]">
+
+  <footer class="bg-[#1a1a1a] text-gray-300">
+
+    <!-- Main footer -->
+    <div class="max-w-[1200px] mx-auto px-5 py-14">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+
+        <!-- Brand / contact -->
+        <div>
+          <div class="font-display text-[26px] font-bold text-white mb-5 flex items-center">
+            <svg class="w-8 h-8 mr-1" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+              <path d="M20 4H8a4 4 0 000 8h6a4 4 0 010 8H4"/>
+            </svg>
+            Safira
+          </div>
+          <p class="text-gray-400 text-[14px] leading-relaxed mb-5">
+            We are a team of designers and developers that create high quality Magento, Prestashop, Opencart.
+          </p>
+          <p class="text-[14px] mb-2">
+            <span class="font-semibold text-white">Address:</span>
+            <span class="text-gray-400"> 4710-4890 Breckinridge USA</span>
+          </p>
+          <p class="text-[14px] mb-2">
+            <span class="font-semibold text-white">Email:</span>
+            <span class="text-gray-400"> support@plazathemes.com</span>
+          </p>
+          <p class="text-[14px]">
+            <span class="font-semibold text-white">Call Us:</span>
+            <span class="text-gray-400"> 1-1001-234-5678</span>
+          </p>
+        </div>
+
+        <!-- Information -->
+        <div>
+          <h3 class="text-white text-[18px] font-semibold mb-5">Information</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-brand transition-colors text-[14px]">Blog</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-brand transition-colors text-[14px]">Contact</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-brand transition-colors text-[14px]">Wishlist</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-brand transition-colors text-[14px]">About Us</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-brand transition-colors text-[14px]">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-brand transition-colors text-[14px]">Frequently Questions</a></li>
+          </ul>
+        </div>
+
+        <!-- Categories -->
+        <div>
+          <h3 class="text-white text-[18px] font-semibold mb-5">Categories</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-brand transition-colors text-[14px]">Lentil</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-brand transition-colors text-[14px]">Limes</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-brand transition-colors text-[14px]">Mangoes</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-brand transition-colors text-[14px]">Chickpea</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-brand transition-colors text-[14px]">Avocados</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-brand transition-colors text-[14px]">Cauliflower</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h3 class="text-white text-[18px] font-semibold mb-5">Sign Up To Newsletter</h3>
+          <p class="text-gray-400 text-[14px] leading-relaxed mb-5">
+            Subscribe to get the latest news and updates from Safira
+          </p>
+          <form class="flex" onsubmit="return false;">
+            <input
+              type="email"
+              placeholder="Your email address..."
+              class="flex-1 min-w-0 bg-white text-gray-800 placeholder-gray-400 text-[14px] px-4 py-3 rounded-l outline-none"
+            >
+            <button
+              type="submit"
+              class="bg-brand hover:bg-brand-dark transition-colors text-white text-[13px] font-semibold tracking-wide px-5 py-3 rounded-r whitespace-nowrap"
+            >
+              SUBSCRIBE
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-white/10">
+      <div class="max-w-[1200px] mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-5">
+
+        <div class="text-gray-400 text-[13px] text-center sm:text-left">
+          <p>Copyright &copy; PlazaThemes. All Right Reserved.</p>
+          <p>Design by Plazathemes.com</p>
+        </div>
+
+        <div class="flex items-center gap-6">
+          <!-- Payment icons -->
+          <div class="flex items-center gap-3">
+            <div class="bg-white rounded px-2.5 py-1.5 flex items-center h-8">
+              <span class="font-bold text-[15px]"><span class="text-[#003087]">Pay</span><span class="text-[#009cde]">Pal</span></span>
+            </div>
+            <div class="bg-white rounded px-2.5 py-1.5 flex items-center h-8">
+              <span class="font-bold text-[13px] text-[#0099df]">Maestro</span>
+            </div>
+            <div class="bg-white rounded px-2.5 py-1.5 flex items-center h-8">
+              <span class="font-bold text-[13px]"><span class="text-orange-500">DISC</span><span class="text-gray-800">VER</span></span>
+            </div>
+            <div class="bg-white rounded px-2.5 py-1.5 flex items-center h-8">
+              <span class="font-bold text-[15px] text-[#1a1f71] italic">VISA</span>
+            </div>
+          </div>
+
+          <!-- Back to top -->
+          <button
+            aria-label="Back to top"
+            class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors flex-shrink-0"
+            onclick="window.scrollTo({top:0, behavior:'smooth'})"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 15l-6-6-6 6"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+</html>
