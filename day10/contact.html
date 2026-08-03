@@ -4,121 +4,218 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Us - Safira</title>
-<script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          brand: {
-            DEFAULT: '#6ba43a',
-            dark: '#5c9330',
-          }
-        },
-        fontFamily: {
-          sans: ['Poppins', 'Arial', 'sans-serif'],
-        }
-      }
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #333;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 24px;
+  }
+
+  .contact-grid {
+    display: flex;
+    gap: 64px;
+    flex-wrap: wrap;
+  }
+
+  /* Left column */
+  .contact-info {
+    width: 320px;
+    flex-shrink: 0;
+  }
+
+  .contact-info h2,
+  .contact-form h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 32px;
+  }
+
+  .info-block {
+    padding: 24px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .info-block:first-of-type {
+    padding-top: 0;
+  }
+
+  .info-block:last-of-type {
+    border-bottom: none;
+  }
+
+  .info-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .info-heading svg {
+    width: 20px;
+    height: 20px;
+    color: #333;
+  }
+
+  .info-heading h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  .info-block p {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+  }
+
+  /* Right column - form */
+  .contact-form {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .form-group {
+    margin-bottom: 24px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #6ba43a;
+    box-shadow: 0 0 0 3px rgba(107, 164, 58, 0.2);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+
+  .btn-send {
+    background: #6ba43a;
+    color: #fff;
+    border: none;
+    padding: 14px 36px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .btn-send:hover {
+    background: #5c9330;
+  }
+
+  @media (max-width: 700px) {
+    .contact-info {
+      width: 100%;
     }
   }
-</script>
+</style>
 </head>
-<body class="font-sans text-gray-800">
+<body>
 
-  <div class="max-w-[1200px] mx-auto px-6 py-16">
-    <div class="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-16">
+  <div class="container">
+    <div class="contact-grid">
 
       <!-- Left: Contact Us info -->
-      <div>
-        <h2 class="text-[28px] font-bold text-gray-900 mb-8">Contact Us</h2>
+      <div class="contact-info">
+        <h2>Contact Us</h2>
 
-        <!-- Address -->
-        <div class="pb-6 border-b border-gray-200">
-          <div class="flex items-center gap-3 mb-3">
-            <svg class="w-5 h-5 text-gray-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="info-block">
+          <div class="info-heading">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 12l9-9 9 9"/>
               <path d="M5 10v10h14V10"/>
             </svg>
-            <h3 class="text-[17px] font-bold text-gray-900">Address</h3>
+            <h3>Address</h3>
           </div>
-          <p class="text-[14px] text-gray-500 leading-relaxed">
-            123 Main Street, Anytown, CA 12345 – USA
-          </p>
+          <p>123 Main Street, Anytown, CA 12345 – USA</p>
         </div>
 
-        <!-- Phone -->
-        <div class="py-6 border-b border-gray-200">
-          <div class="flex items-center gap-3 mb-3">
-            <svg class="w-5 h-5 text-gray-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="info-block">
+          <div class="info-heading">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 6l9 6 9-6"/>
               <rect x="2" y="4" width="20" height="16" rx="2"/>
             </svg>
-            <h3 class="text-[17px] font-bold text-gray-900">Phone</h3>
+            <h3>Phone</h3>
           </div>
-          <p class="text-[14px] text-gray-500 leading-relaxed">Mobile: (08) 123 456 789</p>
-          <p class="text-[14px] text-gray-500 leading-relaxed">Hotline: 1009 678 456</p>
+          <p>Mobile: (08) 123 456 789</p>
+          <p>Hotline: 1009 678 456</p>
         </div>
 
-        <!-- Email -->
-        <div class="pt-6">
-          <div class="flex items-center gap-3 mb-3">
-            <svg class="w-5 h-5 text-gray-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="info-block">
+          <div class="info-heading">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
             </svg>
-            <h3 class="text-[17px] font-bold text-gray-900">Email</h3>
+            <h3>Email</h3>
           </div>
-          <p class="text-[14px] text-gray-500 leading-relaxed">yourmail@domain.com</p>
-          <p class="text-[14px] text-gray-500 leading-relaxed">support@roadthemes.com</p>
+          <p>yourmail@domain.com</p>
+          <p>support@roadthemes.com</p>
         </div>
       </div>
 
       <!-- Right: Contact form -->
-      <div>
-        <h2 class="text-[28px] font-bold text-gray-900 mb-8">Tell Us Your Message</h2>
+      <div class="contact-form">
+        <h2>Tell Us Your Message</h2>
 
-        <form onsubmit="return false;" class="space-y-6">
-
-          <div>
-            <label class="block text-[14px] text-gray-600 mb-2">Your Name (required)</label>
-            <input
-              type="text"
-              class="w-full border border-gray-300 rounded px-4 py-3 text-[14px] outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
-            >
+        <form onsubmit="return false;">
+          <div class="form-group">
+            <label>Your Name (required)</label>
+            <input type="text">
           </div>
 
-          <div>
-            <label class="block text-[14px] text-gray-600 mb-2">Your Email (required)</label>
-            <input
-              type="email"
-              class="w-full border border-gray-300 rounded px-4 py-3 text-[14px] outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
-            >
+          <div class="form-group">
+            <label>Your Email (required)</label>
+            <input type="email">
           </div>
 
-          <div>
-            <label class="block text-[14px] text-gray-600 mb-2">Subject</label>
-            <input
-              type="text"
-              class="w-full border border-gray-300 rounded px-4 py-3 text-[14px] outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
-            >
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text">
           </div>
 
-          <div>
-            <label class="block text-[14px] text-gray-600 mb-2">Your Message</label>
-            <textarea
-              rows="6"
-              class="w-full border border-gray-300 rounded px-4 py-3 text-[14px] outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 resize-y"
-            ></textarea>
+          <div class="form-group">
+            <label>Your Message</label>
+            <textarea rows="6"></textarea>
           </div>
 
-          <button
-            type="submit"
-            class="bg-brand hover:bg-brand-dark transition-colors text-white text-[13px] font-semibold tracking-wide px-9 py-3 rounded-full"
-          >
-            SEND
-          </button>
-
+          <button type="submit" class="btn-send">SEND</button>
         </form>
       </div>
 
