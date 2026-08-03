@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - Facebook Clone</title>
+<link rel="stylesheet" href="home.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top nav -->
+  <header class="topnav">
+    <div class="topnav-left">
+      <div class="fb-logo">f</div>
+      <div class="search-box">
+        <span class="search-icon">&#128269;</span>
+        <input type="text" placeholder="Search Facebook">
+      </div>
+    </div>
+
+    <nav class="topnav-center">
+      <a href="#" class="nav-icon active" title="Home">&#8962;</a>
+      <a href="#" class="nav-icon" title="Watch">&#9654;</a>
+      <a href="#" class="nav-icon" title="Marketplace">&#127970;</a>
+      <a href="#" class="nav-icon" title="Groups">&#128101;</a>
+      <a href="#" class="nav-icon" title="Menu">&#9638;</a>
+    </nav>
+
+    <div class="topnav-right">
+      <div class="profile-chip">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=64&q=80" alt="Josephine">
+        <span>Josephine</span>
+      </div>
+      <button class="round-btn" title="Create">+</button>
+      <button class="round-btn dark" title="Messenger">&#128172;</button>
+      <button class="round-btn dark" title="Notifications">&#128276;</button>
+      <button class="round-btn light active-caret" title="Account">&#9662;</button>
+    </div>
+  </header>
+
+  <div class="page-body">
+
+    <!-- Left sidebar -->
+    <aside class="left-sidebar">
+      <ul class="side-list">
+        <li>
+          <img class="side-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=64&q=80" alt="">
+          <span>Josephine Williams</span>
+        </li>
+        <li><span class="side-icon watch">&#9654;</span> Watch</li>
+        <li><span class="side-icon events">&#128197;</span> Events</li>
+        <li><span class="side-icon friends">&#128101;</span> Friends</li>
+        <li><span class="side-icon memories">&#128340;</span> Memories</li>
+      </ul>
+      <button class="see-more">See More <span>&#9662;</span></button>
+
+      <hr>
+
+      <div class="shortcuts-header">
+        <span>Shortcuts</span>
+        <span class="dots">&#8943;</span>
+      </div>
+      <ul class="side-list shortcuts">
+        <li><img class="side-avatar sq" src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=64&q=80" alt=""> Save the Pomeroy Theatre</li>
+        <li><img class="side-avatar sq" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=64&q=80" alt=""> Weekend Trips</li>
+        <li><img class="side-avatar sq" src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=64&q=80" alt=""> Jasper's Market</li>
+        <li><img class="side-avatar sq" src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=64&q=80" alt=""> Red Table Talk Group</li>
+        <li><img class="side-avatar sq" src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=64&q=80" alt=""> Best Hidden Hiking Trails</li>
+      </ul>
+      <button class="see-more">See More <span>&#9662;</span></button>
+    </aside>
+
+    <!-- Main feed -->
+    <main class="feed">
+
+      <!-- Stories -->
+      <div class="stories">
+        <div class="story add-story">
+          <div class="story-img-wrap"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&q=80" alt=""></div>
+          <span class="story-plus">+</span>
+          <span class="story-label">Add to Story</span>
+        </div>
+        <div class="story">
+          <img class="story-img" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300&q=80" alt="">
+          <img class="story-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&q=80" alt="">
+          <span class="story-label">Tom Russo</span>
+        </div>
+        <div class="story">
+          <img class="story-img" src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?w=300&q=80" alt="">
+          <img class="story-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=64&q=80" alt="">
+          <span class="story-label">Betty Chen</span>
+        </div>
+        <div class="story">
+          <img class="story-img" src="https://images.unsplash.com/photo-1463320726281-696a485928c7?w=300&q=80" alt="">
+          <img class="story-avatar" src="https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?w=64&q=80" alt="">
+          <span class="story-label">Dennis Han</span>
+        </div>
+        <div class="story">
+          <img class="story-img" src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=300&q=80" alt="">
+          <img class="story-avatar" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=64&q=80" alt="">
+          <span class="story-label">Cynthia Lopez</span>
+        </div>
+        <button class="story-nav">&#8250;</button>
+      </div>
+
+      <!-- Composer -->
+      <div class="card composer">
+        <div class="composer-top">
+          <img class="composer-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=64&q=80" alt="">
+          <input type="text" placeholder="What's on your mind, Josephine?">
+        </div>
+        <hr>
+        <div class="composer-actions">
+          <span class="action photo"><i>&#128247;</i> Photo/Video</span>
+          <span class="action tag"><i>&#128100;</i> Tag Friends</span>
+          <span class="action feeling"><i>&#128522;</i> Feeling/Activity</span>
+        </div>
+      </div>
+
+      <!-- Post -->
+      <div class="card post">
+        <div class="post-header">
+          <img class="post-avatar" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=64&q=80" alt="">
+          <div class="post-meta">
+            <span class="post-name">Fiona Ozeri</span>
+            <span class="post-time">5 hrs &middot; &#128101;</span>
+          </div>
+          <span class="post-dots">&#8943;</span>
+        </div>
+        <p class="post-text">Best fireworks show I've ever seen!</p>
+        <div class="post-img">
+          <img src="https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?w=900&q=80" alt="Fireworks">
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Right sidebar / account dropdown -->
+    <aside class="right-sidebar">
+      <div class="account-menu">
+        <div class="account-menu-header">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=64&q=80" alt="">
+          <div>
+            <div class="account-name">Josephine Miller</div>
+            <div class="account-sub">See Your Profile</div>
+          </div>
+        </div>
+        <hr>
+        <ul class="account-menu-list">
+          <li><span class="menu-icon">&#9881;</span> <span class="menu-text">Settings &amp; Privacy</span> <span class="chevron">&#8250;</span></li>
+          <li><span class="menu-icon">&#10067;</span> <span class="menu-text">Help &amp; Support</span> <span class="chevron">&#8250;</span></li>
+          <li class="toggle-row"><span class="menu-icon">&#127765;</span> <span class="menu-text">Dark Mode</span>
+            <span class="toggle"><span class="toggle-dot"></span></span>
+          </li>
+          <li><span class="menu-icon">&#8630;</span> <span class="menu-text">Switch to Classic Facebook</span></li>
+          <li><span class="menu-icon">&#128172;</span> <span class="menu-text">Send Feedback</span></li>
+          <li><span class="menu-icon">&#128682;</span> <span class="menu-text">Log Out</span></li>
+        </ul>
+        <div class="account-menu-footer">
+          Privacy &middot; Terms &middot; Advertising &middot; Ad Choices &middot; Cookies &middot;
+          More &middot; Facebook &copy; 2019
+        </div>
+      </div>
+
+      <ul class="contacts-list">
+        <li><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=64&q=80" alt=""><span class="dot online"></span> Eric Jones</li>
+        <li><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=64&q=80" alt=""><span class="dot online"></span> Cynthia Lopez</li>
+        <li><img class="ringed" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=64&q=80" alt=""><span class="dot online"></span> Betty Chen</li>
+        <li><img src="https://images.unsplash.com/photo-1521252659862-eec69941b071?w=64&q=80" alt=""><span class="dot online"></span> Tina Lim</li>
+        <li><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=64&q=80" alt=""><span class="dot offline"></span> Molly Carter</li>
+      </ul>
+
+      <button class="fab" title="New message">+</button>
+    </aside>
+
+  </div>
+
+</body>
+</html>
