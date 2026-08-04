@@ -1,5 +1,10 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Roboto', Arial, sans-serif;
   background: #f0f2f5;
@@ -32,6 +37,7 @@ hr { border: none; border-top: 1px solid #e4e6eb; margin: 10px 0; }
   align-items: center;
   gap: 10px;
   flex: 1;
+  min-width: 0;
   max-width: 360px;
 }
 
@@ -58,9 +64,10 @@ hr { border: none; border-top: 1px solid #e4e6eb; margin: 10px 0; }
   padding: 8px 14px;
   gap: 8px;
   width: 100%;
+  min-width: 0;
 }
 
-.search-icon { color: #65676b; font-size: 14px; }
+.search-icon { color: #65676b; font-size: 14px; flex-shrink: 0; }
 
 .search-box input {
   border: none;
@@ -68,6 +75,7 @@ hr { border: none; border-top: 1px solid #e4e6eb; margin: 10px 0; }
   outline: none;
   font-size: 15px;
   width: 100%;
+  min-width: 0;
 }
 
 .topnav-center {
@@ -75,12 +83,18 @@ hr { border: none; border-top: 1px solid #e4e6eb; margin: 10px 0; }
   align-items: center;
   gap: 6px;
   flex: 1;
+  min-width: 0;
   justify-content: center;
   max-width: 600px;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+
+.topnav-center::-webkit-scrollbar { display: none; }
 
 .nav-icon {
   width: 112px;
+  flex-shrink: 0;
   height: 52px;
   display: flex;
   align-items: center;
@@ -103,6 +117,7 @@ hr { border: none; border-top: 1px solid #e4e6eb; margin: 10px 0; }
   align-items: center;
   gap: 8px;
   flex: 1;
+  min-width: 0;
   justify-content: flex-end;
   max-width: 360px;
 }
@@ -116,6 +131,7 @@ hr { border: none; border-top: 1px solid #e4e6eb; margin: 10px 0; }
   background: #f0f2f5;
   font-weight: 600;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .profile-chip img {
@@ -253,7 +269,13 @@ hr { border: none; border-top: 1px solid #e4e6eb; margin: 10px 0; }
   gap: 8px;
   margin-bottom: 16px;
   position: relative;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+
+.stories::-webkit-scrollbar { display: none; }
 
 .story {
   position: relative;
@@ -569,13 +591,56 @@ hr { border: none; border-top: 1px solid #e4e6eb; margin: 10px 0; }
 }
 
 /* ===== Responsive ===== */
+
+/* Tablet: drop the right sidebar (contacts/menu), narrow the left one */
 @media (max-width: 1200px) {
-  .page-body { grid-template-columns: 240px 1fr; }
+  .page-body { grid-template-columns: 220px 1fr; }
   .right-sidebar { display: none; }
+  .feed { max-width: 640px; }
 }
 
-@media (max-width: 800px) {
+/* Small tablet: drop the left sidebar too, feed becomes the only column */
+@media (max-width: 900px) {
   .page-body { grid-template-columns: 1fr; }
   .left-sidebar { display: none; }
+  .feed { max-width: 680px; padding: 12px; }
   .topnav-left { max-width: none; }
+  .nav-icon { width: 84px; }
+}
+
+/* Mobile: compact header, icon-only search, stacked composer actions */
+@media (max-width: 600px) {
+  .topnav { padding: 0 8px; gap: 6px; }
+
+  .topnav-left { gap: 8px; flex: 0 0 auto; }
+  .search-box { padding: 8px; }
+  .search-box input { display: none; }        /* icon-only search on phones */
+  .search-box { width: 36px; height: 36px; border-radius: 50%; justify-content: center; flex-shrink: 0; }
+
+  .topnav-center { gap: 0; flex: 1 1 auto; }
+  .nav-icon { width: 52px; font-size: 19px; }
+
+  .profile-chip span { display: none; }        /* avatar only, name hidden */
+  .profile-chip { padding: 4px; }
+
+  .topnav-right { gap: 4px; flex: 0 0 auto; }
+  .round-btn { width: 34px; height: 34px; font-size: 15px; }
+
+  .feed { padding: 8px; }
+
+  .story { width: 100px; height: 168px; }
+
+  .composer-actions { flex-wrap: wrap; gap: 4px; }
+  .composer-actions .action { flex: 1 1 45%; justify-content: center; }
+
+  .post-img img { max-height: 320px; }
+
+  .fab { width: 44px; height: 44px; bottom: 12px; right: 12px; }
+}
+
+/* Very small phones: single-column composer actions, smaller stories */
+@media (max-width: 380px) {
+  .story { width: 84px; height: 150px; }
+  .composer-actions .action { flex: 1 1 100%; }
+  .fb-logo { width: 34px; height: 34px; font-size: 22px; }
 }
