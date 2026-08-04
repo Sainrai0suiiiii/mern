@@ -5,35 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+            background-color: #ffffff;
+            border-bottom: 2px solid #000;
+        }
+
+        nav .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+        }
+
+        nav .nav-links a:hover {
+            color: #555;
+        }
+
+        nav .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        nav .nav-right button {
+            padding: 8px 16px;
+            border: 2px solid #000;
+            background: #000;
+            color: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
         .container{
             display:flex;
+            background-color: rgb(250, 242, 242);
         }
         .left{
             width:20%;
-
         }
         .right{
             width:20%;
+            height: calc(100vh - 60px);
         }
         .center{
             width:60%;
             border:2px solid;
-             
         }
     </style>
 </head>
 <body>
     <nav>
+        <div class="logo">Logo</div>
 
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <button>Sign In</button>
+        </div>
     </nav>
 
     <main>
         <div class="container">
             <div class="left"></div>
             <div class="center"></div>
-            <div class="Right"></div>
-
+            <div class="right"></div>
         </div>
     </main>
+    <footer>
+        <div class="container">
+            <h1>
+                I am learning web development
+            </h1>
+
+        </div>
+    </footer>
 </body>
 </html>
