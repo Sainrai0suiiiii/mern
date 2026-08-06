@@ -114,21 +114,116 @@
             <i class="fa-brands fa-facebook"></i>
         </div>
 
-        <h2>Log into Facebook</h2>
+<h2>Log into Facebook</h2>
 
-        <input type="text" placeholder="Email or mobile number">
-        <input type="password" placeholder="Password">
+        <input type="text" id="email" placeholder="Email or mobile number">
+        <input type="password" id="password" placeholder="Password">
 
-        <button class="login-btn">Log in</button>
+        <!-- Password visibility toggle -->
+        <button type="button" id="togglePassword" class="toggle-btn">Show Password</button>
+
+        <button class="login-btn" id="loginBtn">Log in</button>
 
         <div class="forgot">
-            <a href="#">Forgot password?</a>
+            <a href="#" id="forgotLink">Forgot password?</a>
         </div>
 
-        <a href="#" class="create-account">Create new account</a>
+        <a href="#" class="create-account" id="createAccount">Create new account</a>
 
         <div class="brand">Meta</div>
+
+        <div id="message" class="message"></div>
     </div>
+
+<script>
+    // ------------------- Element references -------------------
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const togglePasswordBtn = document.getElementById('togglePassword');
+    const loginBtn = document.getElementById('loginBtn');
+    const messageDiv = document.getElementById('message');
+
+    // ------------------- Toggle password visibility -------------------
+    togglePasswordBtn.addEventListener('click', () => {
+        const isPassword = passwordInput.type === 'password';
+        passwordInput.type = isPassword ? 'text' : 'password';
+        togglePasswordBtn.textContent = isPassword ? 'Hide Password' : 'Show Password';
+    });
+
+    // ------------------- Helper to show messages -------------------
+    function showMessage(text, isError = true) {
+        messageDiv.textContent = text;
+        messageDiv.style.color = isError ? '#e02424' : '#1877f2';
+        messageDiv.style.marginTop = '10px';
+        messageDiv.style.fontSize = '14px';
+        messageDiv.style.textAlign = 'center';
+    }
+
+    // ------------------- Validation -------------------
+    function validateLogin() {
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+
+        if (email === '') {
+            showMessage('Please enter your email or mobile number.');
+            emailInput.style.borderColor = '#e02424';
+            return false;
+        }
+
+        if (password === '') {
+            showMessage('Please enter your password.');
+            passwordInput.style.borderColor = '#e02424';
+            return false;
+        }
+
+        // Basic email format check (if it looks like an email)
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email.includes('@') && !emailRegex.test(email)) {
+            showMessage('Please enter a valid email address.');
+            emailInput.style.borderColor = '#e02424';
+            return false;
+        }
+
+        return true;
+    }
+
+    // Reset border on input
+    emailInput.addEventListener('input', () => {
+        emailInput.style.borderColor = '#1877f2';
+        messageDiv.textContent = '';
+    });
+    passwordInput.addEventListener('input', () => {
+        passwordInput.style.borderColor = '#1877f2';
+        messageDiv.textContent = '';
+    });
+
+    // ------------------- Login handler -------------------
+    loginBtn.addEventListener('click', () => {
+        if (!validateLogin()) return;
+
+        // Simulated login (replace with real authentication / API call)
+        showMessage('Login successful! Redirecting...', false);
+
+        // Redirect after a short delay (replace "home.html" with your target page)
+        setTimeout(() => {
+            window.location.href = 'home.html';
+        }, 1200);
+    });
+
+    // Allow "Enter" key to submit
+    passwordInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            loginBtn.click();
+        }
+    });
+
+    // ------------------- Demo suggestion -------------------
+    loginBtn.addEventListener('dblclick', () => {
+        emailInput.value = 'demo@example.com';
+        passwordInput.value = 'password123';
+        showMessage('Demo credentials filled!', false);
+    });
+</script>
 
 </body>
 </html>
