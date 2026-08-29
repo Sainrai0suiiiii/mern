@@ -55,3 +55,8 @@ const volCube=function(ss){
     return(ss*ss*ss);
 };
 console.log("this is the volume of cube",volCube(8),"centimeter cube");
+
+const parameter = function (a,b){
+    return a*b/2;
+};
+console.log(parameter(20,30));
