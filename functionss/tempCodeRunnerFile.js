@@ -1,11 +1,17 @@
-console.log("start");
-setTimeout(function(){
-    console.log("Inside setTimeout");
-},2000);
-console.log("end");
+console.log("Setp 1: Start");
+// setTimeout(() =>{
+//     console.log("Step 2: Delayed Response");
+// },2000);
+// console.log("Step 3:end");
 
-console.log("suru");
-setTimeout(function(){
-    console.log("suru......");
-},100);
-console.log("samapta");
+// //the old way:callbacks
+
+// function getUserData(userId, callback){
+//     setTimeout(()=>{
+//         callback({ id: userId, name:"Alice"});
+//     },2000);
+// }
+// console.log("fetching users...");
+// getUserData(1,(user)=>{
+//     console.log("user received:", user.name);
+// });
